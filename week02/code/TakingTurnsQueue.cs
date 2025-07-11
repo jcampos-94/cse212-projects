@@ -45,6 +45,10 @@ public class TakingTurnsQueue
                 person.Turns -= 1;
                 _people.Enqueue(person);
             }
+            else if (person.OriginalTurns <= 0)
+            {
+                _people.Enqueue(person);
+            }
 
             return person;
         }
